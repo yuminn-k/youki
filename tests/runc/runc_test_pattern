@@ -1,7 +1,7 @@
-[skip]runc run no capability
+runc run no capability
 [skip]runc run with unknown capability
-[skip]runc run with new privileges
-[skip]runc run with some capabilities
+runc run with new privileges
+runc run with some capabilities
 runc exec --cap
 [skip]runc exec --cap [ambient is set from spec]
 [skip]runc run [ambient caps not set in inheritable result in a warning]
@@ -65,7 +65,7 @@ runc delete --force [paused container]
 [skip]runc delete --force in cgroupv1 with subcgroups # skip test requires cgroups_v1
 [skip]runc delete --force in cgroupv2 with subcgroups
 [skip]runc delete removes failed systemd unit # skip requires systemd >= v244
-[skip]runc run [redundant default /dev/tty]
+runc run [redundant default /dev/tty]
 runc run [redundant default /dev/ptmx]
 runc run/update [device cgroup deny]
 runc run [device cgroup allow rw char device]
@@ -73,8 +73,8 @@ runc run [device cgroup allow rm block device]
 [skip]runc exec vs systemctl daemon-reload # skip test requires systemd
 [skip]runc run [devices vs systemd NeedDaemonReload] # skip requires systemd >= v230
 non-empty HOME env is used
-[skip]empty HOME env var is overridden
-[skip]empty HOME env var is overridden with multiple overrides
+empty HOME env var is overridden
+empty HOME env var is overridden with multiple overrides
 [skip]env var HOME is set only once # This test hangs when running with Youki
 env var override is set only once
 env var override
@@ -146,15 +146,15 @@ mask paths [file]
 mask paths [directory]
 [skip]mask paths [prohibit symlink /proc]
 [skip]mask paths [prohibit symlink /sys]
-[skip]runc run [tmpcopyup]
+runc run [tmpcopyup]
 [skip]runc run [bind mount] # This test hangs when running with Youki
 runc run [ro tmpfs mount]
 [skip]runc run [ro /dev mount]
 runc run [tmpfs mount with absolute symlink]
-[skip]runc run [/proc is a symlink]
+runc run [/proc is a symlink]
 runc run [setgid / + mkdirall]
 runc run [ro /sys/fs/cgroup mounts]
-[skip]runc run [ro /sys/fs/cgroup mounts + cgroupns]
+runc run [ro /sys/fs/cgroup mounts + cgroupns]
 [skip]runc run [mount order, container bind-mount source]
 [skip]runc run [mount order, container bind-mount source] (userns)
 [skip]runc run [mount order, container idmap source]
@@ -187,7 +187,7 @@ ps
 ps -f json
 ps -e -x
 ps after the container stopped
-[skip]runc run with RLIMIT_NOFILE(The same as system's hard value)
+runc run with RLIMIT_NOFILE(The same as system's hard value)
 runc run with RLIMIT_NOFILE(Bigger than system's hard value)
 runc run with RLIMIT_NOFILE(Smaller than system's hard value)
 [skip]runc exec with RLIMIT_NOFILE(The same as system's hard value)
@@ -254,10 +254,10 @@ runc run [redundant seccomp rules]
 state (kill + delete)
 state (pause + resume)
 runc run [timens offsets with no timens]
-[skip]runc run [timens with no offsets]
-[skip]runc run [simple timens]
+runc run [timens with no offsets]
+runc run [simple timens]
 runc exec [simple timens]
-[skip]runc run [simple timens + userns]
+runc run [simple timens + userns]
 runc run [stdin not a tty]
 runc run [tty ptsname]
 runc run [tty owner]
